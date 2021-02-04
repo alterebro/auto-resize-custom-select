@@ -1,0 +1,32 @@
+{
+  "name": "auto-resize-custom-select",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alterebro/auto-resize-custom-select.git"
+  },
+  "keywords": [
+    "select",
+    "custom",
+    "autoresize"
+  ],
+  "author": "Jorge Moreno, moro.es (@alterebro)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alterebro/auto-resize-custom-select/issues"
+  },
+  "homepage": "https://github.com/alterebro/auto-resize-custom-select#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-umd": "^2.0.0"
+  }
+}

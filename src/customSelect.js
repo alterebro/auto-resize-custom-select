@@ -1,3 +1,5 @@
+"use strict";
+
 const customSelect = function(_config) {
 
     let defaultOptions = {
