@@ -27,10 +27,11 @@ const customSelect = function(_config) {
     let styleId = `beau-select-css-${settings.className}`
     if (elements.length && document.querySelector('style#' + styleId) === null) {
 
-        let cssContent = `.${settings.className} { position: relative; display: inline-flex; align-items: center }`;
-            cssContent += `.${settings.className} .selection { border-bottom: dotted currentColor 1px }`;
+        let containerWidth = (settings.width) ? ` width: ${settings.width} ` : '';
+        let cssContent = `.${settings.className} { position: relative; display: inline-flex; align-items: center; ${containerWidth}}`;
+            cssContent += `.${settings.className} .selection { border-bottom: dotted currentColor 1px; flex: 1 1 auto; }`;
             cssContent += `.${settings.className} .arrow:after { content: '\u00a0${settings.expandChar}' }`;
-            cssContent += `.${settings.className} select { all: revert; position: absolute; cursor: pointer; opacity: 0 }`;
+            cssContent += `.${settings.className} select { all: revert; position: absolute; cursor: pointer; opacity: 0.15 }`;
 
         let styleSheet = document.createElement('style');
             styleSheet.id = styleId;
