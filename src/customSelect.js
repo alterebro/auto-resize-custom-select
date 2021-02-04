@@ -65,3 +65,5 @@ const customSelect = function(_config) {
 
     });
 }
+
+export default customSelect;
