@@ -29,11 +29,11 @@ customSelect({
 });
 ```
 
-### `el`
+#### `el`
 
 A css selector that'll pick the elements you want to be affected by the script. It defaults to **`select`** in order to take all the `&lt;select&gt;` elements.
 
-### `className`
+#### `className`
 
 Name of the `class` that will adopt the substitute parent element. Its default name is `custom-select`. The element tree to style then result as follows:
 
@@ -44,11 +44,11 @@ Name of the `class` that will adopt the substitute parent element. Its default n
 .custom-select .arrow:after {} /* - it's created using the :after pseudo-element */
 ```
 
-### `expandChar`
+#### `expandChar`
 
 The expand character created via `content` in the `:after` pseudo-element. The default value is the CSS ISO Code `\u25BE` ( _Black down-pointing small triangle_ )
 
-### `width`
+#### `width`
 
 When set to `false` (default) it will resize itself to the width of the selected option. When set to a valid css dimension value, it will have a fixed size.
 
@@ -71,8 +71,4 @@ $ npm run build
 
 ## License
 
-[MIT](https://github.com/alterebro/auto-resize-custom-select/blob/main/LICENSE)
-
----
-
-Jorge Moreno *&mdash; [@alterebro](https://twitter.com/alterebro)*
+[MIT](https://github.com/alterebro/auto-resize-custom-select/blob/main/LICENSE) © Jorge Moreno. [@alterebro](https://twitter.com/alterebro)

@@ -2,10 +2,15 @@
   "name": "auto-resize-custom-select",
   "version": "0.1.0",
   "description": "Auto width resized and custom select html elements",
-  "main": "index.js",
+  "main": "src/customSelect.js",
+  "module": "src/customSelect.js",
+  "browser": "dist/customSelect.min.js",
+  "unpkg": "dist/customSelect.min.js",
   "scripts": {
     "clean": "rm -rf dist/*",
-    "build": "npm run clean && gulp"
+    "build": "npm run clean && gulp",
+    "version": "npm run build && git add -A dist/",
+    "postversion": "git push && git push --tags && npm publish"
   },
   "repository": {
     "type": "git",
@@ -16,7 +21,7 @@
     "custom",
     "autoresize"
   ],
-  "author": "Jorge Moreno, moro.es (@alterebro)",
+  "author": "Jorge Moreno @alterebro (https://moro.es)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/alterebro/auto-resize-custom-select/issues"
