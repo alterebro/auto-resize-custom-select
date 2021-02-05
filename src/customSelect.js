@@ -6,7 +6,7 @@ const customSelect = function(_config) {
         el : 'select',
         className : 'custom-select',
         expandChar : '\u25BE',
-        width : false // (TBD)
+        width : false
     }
     let config = ( typeof(_config) == 'string' ) ? { el : _config } : _config;
     let settings = {...defaultOptions, ...config}
