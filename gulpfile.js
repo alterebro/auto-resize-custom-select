@@ -14,21 +14,46 @@ ${pkg.license} (c) ${new Date().getFullYear()} ${pkg.author}
 ${pkg.homepage}
 */`;
 
-function generateMinified(outputFolder) {
+const moduleName = "customSelect";
 
-    return gulp.src("src/*.js")
-        .pipe(babel({ presets: ["@babel/preset-env"] }))
-        .pipe(uglify())
-        .pipe(wrapper({
-            header: credits + '\n',
-        }))
-        .pipe(rename({ suffix: ".min" }))
-        .pipe(gulp.dest(outputFolder));
+const es5 = {
+    header : `;(function () {`,
+    footer : `this.${moduleName} = ${moduleName}; }).call(this);`
 }
+
+    function generateMinified(outputFolder) {
+
+        return gulp.src("src/*.js")
+            .pipe(babel({ presets: ["@babel/preset-env"] }))
+            .pipe(wrapper({
+                header: es5.header + '\n',
+                footer: es5.footer + '\n'
+            }))
+            .pipe(uglify())
+            .pipe(wrapper({
+                header: credits + '\n',
+            }))
+            .pipe(rename({ suffix: ".min" }))
+            .pipe(gulp.dest(outputFolder));
+    }
+
+const mjs = {
+    footer : `export default ${moduleName};`
+}
+
+    function generateModule() {
+        return gulp.src("src/*.js")
+            .pipe(wrapper({
+                footer: '\n' + mjs.footer + '\n'
+            }))
+            .pipe(gulp.dest("dist"));
+    }
 
 gulp.task("default", async function() {
 
     generateMinified("dist");
+    generateModule();
+
 });
 
 // ~~~~~~~~~~~~~~~~~~
