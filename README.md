@@ -1,11 +1,31 @@
 # auto-resize-custom-select
 
+> Auto-resize the width of a `select` element based on the size of the current selected `option`.
+Fully customizable with CSS without the common styling limitations of a `select` element.
+
+**customSelect**. Auto resizes drop-down `select` html elements to fit the size of the option that has been selected. It also gives you total freedom and control to style the list selector with CSS without the usual constraints on this form elements.
+It creates a substitute `span` element with the `.custom-select` class, which contains two children `span` elements, with the selection value (`.selection`) and the expand figure (`.arrow`) that you can stylize as you wish.
+
+```html
+<!-- Generated markup from the <select/> element -->
+<span class="custom-select">
+    <span class="selection">value</span>
+    <span class="arrow">[::before]</span>
+</span>
+```
+
 
 ## Usage
 
 Include the script on your document and call the `customSelect` function
 
 ```html
+    ...
+    <select>
+        <option value="1">un</option>
+        <option value="2">deux</option>
+        <option value="3">trois</option>
+    </select>
     ...
     <script src="../path/to/dist/auto-resize-custom-select.js"></script>
     <script>
