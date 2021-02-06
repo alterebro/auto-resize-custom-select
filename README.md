@@ -1,8 +1,8 @@
 # auto-resize-custom-select [#](https://alterebro.github.io/auto-resize-custom-select/) [![npm](https://img.shields.io/npm/v/auto-resize-custom-select.svg?label=&color=24292e)](https://github.com/alterebro/auto-resize-custom-select/releases/latest)
 
-[![MIT license](https://img.shields.io/github/license/alterebro/auto-resize-custom-select.svg)](https://github.com/alterebro/auto-resize-custom-select/blob/main/LICENSE) [![NPM Version](https://img.shields.io/npm/v/auto-resize-custom-select.svg)](https://www.npmjs.com/package/auto-resize-custom-select) [![File Size](https://img.shields.io/github/size/alterebro/auto-resize-custom-select/dist/customSelect.min.js.svg)](https://github.com/alterebro/auto-resize-custom-select/blob/main/dist/customSelect.min.js) [![Twitter](https://img.shields.io/twitter/follow/alterebro.svg)](https://twitter.com/alterebro)
-
 ![Custom Select](https://alterebro.github.io/auto-resize-custom-select/custom-select-dark.png "customSelect")
+
+[![MIT license](https://img.shields.io/github/license/alterebro/auto-resize-custom-select.svg)](https://github.com/alterebro/auto-resize-custom-select/blob/main/LICENSE) [![NPM Version](https://img.shields.io/npm/v/auto-resize-custom-select.svg)](https://www.npmjs.com/package/auto-resize-custom-select) [![File Size](https://img.shields.io/github/size/alterebro/auto-resize-custom-select/dist/customSelect.min.js.svg)](https://github.com/alterebro/auto-resize-custom-select/blob/main/dist/customSelect.min.js) [![Twitter](https://img.shields.io/twitter/follow/alterebro.svg)](https://twitter.com/alterebro)
 
 > Auto-resize the width of a `select` element based on the size of the current selected `option`.
 Fully customizable with CSS without the common styling limitations of a `select` element.
