@@ -34,7 +34,9 @@
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-header": "^2.0.9",
+    "gulp-markdown": "^5.1.0",
     "gulp-rename": "^2.0.0",
-    "gulp-uglify": "^3.0.2"
+    "gulp-uglify": "^3.0.2",
+    "gulp-wrapper": "^1.0.0"
   }
 }

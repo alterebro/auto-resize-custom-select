@@ -10,7 +10,7 @@ It creates a substitute `span` element with the `.custom-select` class, which co
 <!-- Generated markup from the <select/> element -->
 <span class="custom-select">
     <span class="selection">value</span>
-    <span class="arrow">[::before]</span>
+    <span class="arrow">[::after]</span>
 </span>
 ```
 
