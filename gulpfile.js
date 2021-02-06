@@ -15,7 +15,7 @@ ${pkg.homepage}
 */`;
 
 function generateMinified(outputFolder) {
-    console.log(outputFolder);
+
     return gulp.src("src/*.js")
         .pipe(babel({ presets: ["@babel/preset-env"] }))
         .pipe(uglify())
@@ -43,10 +43,15 @@ const tpl = {
     <meta name="description" content="${pkg.description}" />
     <meta name="keywords" content="${(pkg.keywords).join(', ')}" />
     <meta name="author" content="${pkg.author}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     <link rel="stylesheet" href="docs.css" />
 </head>
-<body>`,
-    footer : `<script src="customSelect.min.js" charset="utf-8"></script>
+<body>
+    <div class="markdown-body">`,
+    footer : `  </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+<script src="customSelect.min.js" charset="utf-8"></script>
 <script src="docs.js" charset="utf-8"></script>
 </body>
 </html>`
@@ -61,6 +66,9 @@ function generateDocs() {
         .pipe(wrapper({
             header: tpl.header + '\n',
             footer: tpl.footer + '\n'
+        }))
+        .pipe(rename({
+            basename: "index",
         }))
         .pipe(gulp.dest("docs"))
 }

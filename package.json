@@ -9,7 +9,8 @@
   "scripts": {
     "clean": "rm -rf dist/*",
     "build": "npm run clean && gulp",
-    "version": "npm run build && git add -A dist/",
+    "docs": "gulp docs",
+    "version": "npm run build && npm run docs && git add -A dist/",
     "postversion": "git push && git push --tags && npm publish"
   },
   "repository": {
