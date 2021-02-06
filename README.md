@@ -1,4 +1,6 @@
-# auto-resize-custom-select
+# auto-resize-custom-select [#](https://alterebro.github.io/auto-resize-custom-select/)
+
+![Custom Select](https://alterebro.github.io/auto-resize-custom-select/custom-select-dark.png "customSelect")
 
 > Auto-resize the width of a `select` element based on the size of the current selected `option`.
 Fully customizable with CSS without the common styling limitations of a `select` element.
@@ -87,6 +89,9 @@ $ npm install
 
 # Build (/dist)
 $ npm run build
+
+# Build (/docs)
+$ npm run docs
 ```
 
 ## License
