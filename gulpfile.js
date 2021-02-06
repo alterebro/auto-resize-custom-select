@@ -14,7 +14,8 @@ ${pkg.license} (c) ${new Date().getFullYear()} ${pkg.author}
 ${pkg.homepage}
 */`;
 
-gulp.task("default", function() {
+function generateMinified(outputFolder) {
+    console.log(outputFolder);
     return gulp.src("src/*.js")
         .pipe(babel({ presets: ["@babel/preset-env"] }))
         .pipe(uglify())
@@ -22,31 +23,50 @@ gulp.task("default", function() {
             header: credits + '\n',
         }))
         .pipe(rename({ suffix: ".min" }))
-        .pipe(gulp.dest("dist"));
+        .pipe(gulp.dest(outputFolder));
+}
+
+gulp.task("default", async function() {
+
+    generateMinified("dist");
 });
 
 // ~~~~~~~~~~~~~~~~~~
 // Build Docs
 const tpl = {
     header : `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>${pkg.name} v${pkg.version}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="${pkg.homepage}" />
-        <link rel="stylesheet" href="css.css" />
-    </head>
-    <body>`,
-    footer : `</body>
-    </html>`
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>${pkg.name} v${pkg.version}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="${pkg.description}" />
+    <meta name="keywords" content="${(pkg.keywords).join(', ')}" />
+    <meta name="author" content="${pkg.author}" />
+    <link rel="stylesheet" href="docs.css" />
+</head>
+<body>`,
+    footer : `<script src="customSelect.min.js" charset="utf-8"></script>
+<script src="docs.js" charset="utf-8"></script>
+</body>
+</html>`
 };
-gulp.task("docs", function() {
+
+function generateDocs() {
     return gulp.src("README.md")
-        .pipe(markdown())
+        .pipe(markdown({
+            xhtml : true,
+            breaks: true
+        }))
         .pipe(wrapper({
             header: tpl.header + '\n',
             footer: tpl.footer + '\n'
         }))
         .pipe(gulp.dest("docs"))
+}
+
+gulp.task("docs", async function() {
+
+    generateDocs();
+    generateMinified("docs");
 });
