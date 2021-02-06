@@ -48,7 +48,8 @@ const tpl = {
     <link rel="stylesheet" href="docs.css" />
 </head>
 <body>
-    <div class="markdown-body">`,
+    <div class="markdown-body">
+        <nav></nav>`,
     footer : `  </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
 <script src="customSelect.min.js" charset="utf-8"></script>
