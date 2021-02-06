@@ -1,4 +1,6 @@
-# auto-resize-custom-select [#](https://alterebro.github.io/auto-resize-custom-select/)
+# auto-resize-custom-select [#](https://alterebro.github.io/auto-resize-custom-select/) [![npm](https://img.shields.io/npm/v/auto-resize-custom-select.svg?label=&color=24292e)](https://github.com/alterebro/auto-resize-custom-select/releases/latest)
+
+[![MIT license](https://img.shields.io/github/license/alterebro/auto-resize-custom-select.svg)](https://github.com/alterebro/auto-resize-custom-select/blob/main/LICENSE) [![NPM Version](https://img.shields.io/npm/v/auto-resize-custom-select.svg)](https://www.npmjs.com/package/auto-resize-custom-select) [![File Size](https://img.shields.io/github/size/alterebro/auto-resize-custom-select/dist/customSelect.min.js.svg)](https://github.com/alterebro/auto-resize-custom-select/blob/main/dist/customSelect.min.js) [![Twitter](https://img.shields.io/twitter/follow/alterebro.svg)](https://twitter.com/alterebro)
 
 ![Custom Select](https://alterebro.github.io/auto-resize-custom-select/custom-select-dark.png "customSelect")
 
@@ -16,10 +18,22 @@ It creates a substitute `span` element with the `.custom-select` class, which co
 </span>
 ```
 
+## Install
+
+```sh
+$ npm i auto-resize-custom-select
+```
+
+Easiest way to install it is via **NPM** or including the minified file from the **unpkg** or **jsdelivr** CDNs.
+
+```html
+<script src="https://unpkg.com/auto-resize-custom-select"></script>
+<script src="https://cdn.jsdelivr.net/gh/alterebro/auto-resize-custom-select/dist/customSelect.min.js"></script>
+```
 
 ## Usage
 
-Include the script on your document and call the `customSelect` function
+Just include it on your document and call the `customSelect` function. The script is available as ES5 minified file and as ES Module.
 
 ```html
     ...
@@ -29,7 +43,7 @@ Include the script on your document and call the `customSelect` function
         <option value="3">trois</option>
     </select>
     ...
-    <script src="../path/to/dist/auto-resize-custom-select.js"></script>
+    <script src="https://unpkg.com/auto-resize-custom-select"></script>
     <script>
         customSelect();
     </script>
@@ -37,6 +51,11 @@ Include the script on your document and call the `customSelect` function
 </html>
 ```
 
+```javascript
+import customSelect from 'auto-resize-custom-select';
+
+customSelect();
+```
 
 ## Options
 
@@ -90,7 +109,7 @@ $ npm install
 # Build (/dist)
 $ npm run build
 
-# Build (/docs)
+# Build (/docs: https://alterebro.github.io/auto-resize-custom-select/)
 $ npm run docs
 ```
 

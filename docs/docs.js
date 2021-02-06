@@ -1,6 +1,7 @@
-
 const dynamicSelect = (function() {
 
+    let _body = document.querySelectorAll('.markdown-body')[0];
+    let _container = document.createElement('nav');
     let _selector = document.createElement('select');
     let _headers = document.querySelectorAll('h2, h3');
 
@@ -28,7 +29,8 @@ const dynamicSelect = (function() {
             window.location.hash = _val;
         });
 
-    document.querySelector('nav').appendChild(_selector);
+    _container.appendChild(_selector);
+    _body.insertBefore(_container, _body.firstChild);
 
 })();
 
