@@ -5,14 +5,14 @@ const rename    = require("gulp-rename");
 const header    = require("gulp-header");
 
 const pkg = require('./package.json');
-const banner = ['/**',
-    ' * <%= pkg.name %> - <%= pkg.description %>',
-    ' * @version v<%= pkg.version %>',
-    ' * @author <%= pkg.author %>',
-    ' * @link <%= pkg.homepage %>',
-    ' * @license <%= pkg.license %>',
-    ' */',
-    ''].join('\n');
+const banner = [
+        '/*!',
+        '<%= pkg.name %> v<%= pkg.version %>',
+        '<%= pkg.license %> (c) <%= new Date().getFullYear() %> <%= pkg.author %>',
+        '<%= pkg.homepage %>',
+        '*/',
+        ''
+    ].join('\n');
 
 gulp.task("default", function() {
     return gulp.src("src/*.js")
