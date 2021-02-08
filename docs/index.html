@@ -65,7 +65,8 @@ customSelect();
     el: &#39;select&#39;,
     className: &#39;custom-select&#39;,
     expandChar: &#39;\u25BE&#39;,
-    width: false
+    width: false,
+    injectCSS : true
 });
 </code></pre>
 <h3 id="el"><code>el</code></h3>
@@ -81,6 +82,28 @@ customSelect();
 <p>The expand character created via <code>content</code> in the <code>:after</code> pseudo-element. The default value is the CSS ISO Code <code>\u25BE</code> ( <em>Black down-pointing small triangle</em> )</p>
 <h3 id="width"><code>width</code></h3>
 <p>When set to <code>false</code> (default) it will resize itself to the width of the selected option. When set to a valid css dimension value, it will have a fixed size.</p>
+<h3 id="injectcss"><code>injectCSS</code></h3>
+<p>The script injects by default some CSS styles at the top of the <code>head</code> of your document in order to create a minimum acceptable design for the generated code. If you don&#39;t need it and you want to style it your way, this can be disabled by setting this property to <code>false</code></p>
+<pre><code class="language-css">/* Default injected CSS code: */
+.custom-select {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+.custom-select .selection {
+    text-decoration: underline;
+    flex: 1 1 auto;
+}
+.custom-select .arrow:after {
+    content: &#39;\u00a0\u25BE&#39;; /* No-break Space + Expand Char */
+}
+.custom-select select {
+    all: revert;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+}
+</code></pre>
 <h2 id="development">Development</h2>
 <pre><code class="language-sh"># Source: /src/customSelect.js
 

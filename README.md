@@ -66,7 +66,8 @@ customSelect({
     el: 'select',
     className: 'custom-select',
     expandChar: '\u25BE',
-    width: false
+    width: false,
+    injectCSS : true
 });
 ```
 
@@ -93,6 +94,31 @@ The expand character created via `content` in the `:after` pseudo-element. The d
 
 When set to `false` (default) it will resize itself to the width of the selected option. When set to a valid css dimension value, it will have a fixed size.
 
+### `injectCSS`
+
+The script injects by default some CSS styles at the top of the `head` of your document in order to create a minimum acceptable design for the generated code. If you don't need it and you want to style it your way, this can be disabled by setting this property to `false`
+
+```css
+/* Default injected CSS code: */
+.custom-select {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+.custom-select .selection {
+    text-decoration: underline;
+    flex: 1 1 auto;
+}
+.custom-select .arrow:after {
+    content: '\u00a0\u25BE'; /* No-break Space + Expand Char */
+}
+.custom-select select {
+    all: revert;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+}
+```
 
 ## Development
 
