@@ -4,9 +4,7 @@
     <meta charset="utf-8" />
     <title>auto-resize-custom-select</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" /> -->
-    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/styles/monokai-sublime.min.css">
-
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/styles/monokai-sublime.min.css" />
 <style media="screen">
 html, body, h1, h2, h3, ul, li, pre {
     margin: 0;
@@ -22,7 +20,8 @@ body {
     font-size: 1.4rem;
     line-height: 1.4;
     max-width: 96rem;
-    margin: 3rem auto;
+    margin: 2rem auto;
+    padding: 0 2rem;
     background: #eee;
 }
 *, *:before, *:after {
@@ -34,7 +33,7 @@ header {
     font-family: sans-serif;
     color: #333;
     margin: 0 0 2rem;
-    text-shadow: 0 1px 0 #fff;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
 }
 header h1 {}
 header h2 {
@@ -59,6 +58,7 @@ section {
     justify-content: space-between;
     border-radius: 4px;
     padding: 2rem;
+    margin: 0 0 2rem;
     background: #fff;
     box-shadow: 0 4px 2px -3px rgba(0, 0, 0, .15), 0 0 10px rgba(0, 0, 0, .1);
 }
@@ -113,8 +113,16 @@ pre, code {}
 .hljs { padding: 1em; }
 
 
+@media screen and (max-width: 960px) {
+    section > div {
+        flex: 0 0 100%;
+        width: 100%;
+        padding: 2rem 0 1rem 0;
+    }
+}
 
 
+/* --- */
 
 .beau-selecteur {
     border: solid #333 1px;
@@ -148,6 +156,33 @@ pre, code {}
 
 <section>
     <div class="html">
+<pre><code class="language-html">&lt;select&gt;
+    &lt;option value="1"&gt;one&lt;/option&gt;
+    &lt;option value="2"&gt;two&lt;/option&gt;
+    &lt;option value="3"&gt;three&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+    </div>
+
+    <div class="js">
+<pre><code class="language-javascript">customSelect();</code></pre>
+    </div>
+
+    <div class="css">
+<pre><code class="language-css">/* No Options &amp; No Styling
+Default Layout */</code></pre>
+    </div>
+
+    <div class="result">
+        <select class="default">
+            <option value="1">one</option>
+            <option value="2">two</option>
+            <option value="3">three</option>
+        </select>
+    </div>
+</section>
+
+<section>
+    <div class="html">
 <pre><code class="language-html">&lt;select class="fr"&gt;
     &lt;option value="1"&gt;un&lt;/option&gt;
     &lt;option value="2"&gt;deux&lt;/option&gt;
@@ -171,23 +206,21 @@ pre, code {}
     </div>
 
     <div class="result">
-
         <select class="fr">
             <option value="1">un</option>
             <option value="2">deux</option>
             <option value="3">trois</option>
         </select>
-
     </div>
 </section>
 
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-<script src="customSelect.min.js" charset="utf-8"></script>
+<script src="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/highlight.min.js"></script>
+<script src="https://unpkg.com/auto-resize-custom-select" charset="utf-8"></script>
 <script charset="utf-8">
 hljs.initHighlightingOnLoad();
 
+customSelect('.default');
 customSelect({
     el: '.fr',
     className: 'beau-selecteur'
