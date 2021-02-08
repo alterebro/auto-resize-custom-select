@@ -4,7 +4,8 @@ const customSelect = function(_config) {
         el : 'select',
         className : 'custom-select',
         expandChar : '\u25BE',
-        width : false
+        width : false,
+        injectCSS : true
     }
     let config = ( typeof(_config) == 'string' ) ? { el : _config } : _config;
     let settings = {...defaultOptions, ...config}
@@ -22,8 +23,8 @@ const customSelect = function(_config) {
     }
 
     let elements = document.querySelectorAll(settings.el);
-    let styleId = `beau-select-css-${settings.className}`
-    if (elements.length && document.querySelector('style#' + styleId) === null) {
+    let styleId = `custom-select-css-${settings.className}`;
+    if (elements.length && document.querySelector('style#' + styleId) === null && settings.injectCSS) {
 
         let containerWidth = (settings.width) ? ` width: ${settings.width} ` : '';
         let cssContent = `.${settings.className} { position: relative; display: inline-flex; align-items: center; ${containerWidth}} `;

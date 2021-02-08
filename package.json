@@ -10,7 +10,7 @@
     "clean": "rm -rf dist/*",
     "build": "npm run clean && gulp",
     "docs": "gulp docs",
-    "version": "npm run build && npm run docs && git add -A dist/",
+    "version": "npm run build && npm run docs && git add -A dist/ && git add -A docs/",
     "postversion": "git push && git push --tags && npm publish"
   },
   "repository": {
