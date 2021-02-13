@@ -29,17 +29,16 @@ body {
     background-repeat: no-repeat;
 }
 
-header {
+header, footer {
     font-family: sans-serif;
     color: #333;
-    margin: 0 0 2rem;
     text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
 }
 header h1 {}
 header h2 {
     margin: 0 0 1rem;
 }
-header a {
+header a, footer a {
     color: #09c;
     text-decoration: none;
 }
@@ -51,7 +50,9 @@ header ul {}
 header ul ul { padding: .5rem 0 .5rem 1rem; }
 header ul li { list-style: none; }
 header ul li ul li { list-style: square inside; }
-
+main {
+    padding: 2rem 0 1rem;
+}
 section {
     display: flex;
     flex-wrap: wrap;
@@ -61,6 +62,9 @@ section {
     margin: 0 0 2rem;
     background: #fff;
     box-shadow: 0 4px 2px -3px rgba(0, 0, 0, .15), 0 0 10px rgba(0, 0, 0, .1);
+}
+main section:last-child {
+    margin: 0;
 }
 section > div {
     flex: 0 0 33%;
@@ -97,7 +101,10 @@ section > div.result:before {
     top: 1rem;
     left: 2rem;
 }
-
+footer {
+    text-align: right;
+    padding: 0 .25rem 1rem;
+}
 
 pre {
     display: block;
@@ -154,6 +161,7 @@ pre, code {}
     </ul>
 </header>
 
+<main>
 <section>
     <div class="html">
 <pre><code class="language-html">&lt;select&gt;
@@ -213,6 +221,13 @@ Default Layout */</code></pre>
         </select>
     </div>
 </section>
+</main>
+
+<footer>
+    <p>
+        Jorge Moreno &copy; 2021. <a href="https://twitter.com/alterebro">@<strong>alterebro</strong></a>
+    </p>
+</footer>
 
 
 <script src="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/highlight.min.js"></script>
