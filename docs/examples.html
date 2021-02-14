@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <title>auto-resize-custom-select</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no" />
-    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/styles/monokai-sublime.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/styles/github-gist.min.css" />
 <style media="screen">
-html, body, h1, h2, h3, ul, li, pre {
+html, body, h1, h2, h3, ul, li, pre, details {
     margin: 0;
     padding: 0;
 }
@@ -18,6 +18,7 @@ html {
 }
 body {
     font-size: 1.4rem;
+    font-family: sans-serif;
     line-height: 1.4;
     max-width: 96rem;
     margin: 2rem auto;
@@ -30,13 +31,13 @@ body {
 }
 
 header, footer {
-    font-family: sans-serif;
     color: #333;
     text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
 }
 header h1 {}
 header h2 {
     margin: 0 0 1rem;
+    font-weight: 500;
 }
 header a, footer a {
     color: #09c;
@@ -46,69 +47,36 @@ header a:hover {
     color: #000;
     text-decoration: underline;
 }
-header ul {}
-header ul ul { padding: .5rem 0 .5rem 1rem; }
-header ul li { list-style: none; }
-header ul li ul li { list-style: square inside; }
+footer ul ul { padding: .5rem 0 1rem 1rem; }
+footer ul li { list-style: none; }
+footer ul li ul li { list-style: square inside; }
+
+
+
 main {
-    padding: 2rem 0 1rem;
-}
-section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border-radius: 4px;
+    align-items: stretch;
+}
+main > section {
+    flex: 0 0 auto;
+}
+section {
+    border: dashed #999 1px;
+    border-radius: 3px;
     padding: 2rem;
-    margin: 0 0 2rem;
-    background: #fff;
-    box-shadow: 0 4px 2px -3px rgba(0, 0, 0, .15), 0 0 10px rgba(0, 0, 0, .1);
+    width: calc(50% - 1rem);
+    margin-bottom: 2rem;
 }
-main section:last-child {
-    margin: 0;
-}
+
 section > div {
-    flex: 0 0 33%;
-    width: 33%;
-    position: relative;
-    padding: 2rem 0 0 0;
-}
-section > div:before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-family: sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    height: 2rem;
-    line-height: 2rem;
-    color: #333;
-}
-section > div.result {
-    margin: 1rem 0 0 0;
-    padding: 4rem 2rem 2rem;
-    flex: 0 0 100%;
-    width: 100%;
-    border: dashed #333 1px;
-    border-radius: 4px;
-}
-section > div.html:before { content: 'HTML' }
-section > div.css:before { content: 'CSS' }
-section > div.js:before { content: 'JavaScript' }
-section > div.result:before {
-    content: 'Result';
-    top: 1rem;
-    left: 2rem;
-}
-footer {
-    text-align: right;
-    padding: 0 .25rem 1rem;
+    min-height: 4rem;
+    margin: 0 0 1rem 0;
 }
 
 pre {
     display: block;
-    height: 100%;
 }
 pre > code {
     height: 100%;
@@ -116,18 +84,10 @@ pre > code {
     padding: 2rem;
     font-size: 1.2em;
 }
-pre, code {}
 .hljs { padding: 1em; }
 
 
-@media screen and (max-width: 960px) {
-    section > div {
-        flex: 0 0 100%;
-        width: 100%;
-        padding: 2rem 0 1rem 0;
-    }
-}
-
+/* @media screen and (max-width: 960px) {} */
 
 /* --- */
 
@@ -136,6 +96,139 @@ pre, code {}
     border-radius: 3px;
     padding: .5rem 1rem;
 }
+
+
+/* --- */
+
+.win95 {
+    background: #fff;
+    border-top: solid #868b8f 2px;
+    border-left: solid #868b8f 2px;
+    border-bottom: solid #daddde 2px;
+    border-right: solid #daddde 2px;
+    box-shadow:
+        inset 2px 2px 0 0 #000002,
+        inset -2px -2px 0 0 #c3c4c6;
+    padding: 2px;
+}
+.win95 .selection {
+    padding: 2px 8px;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+.win95 .arrow {
+    padding: 2px 8px;
+    background: #c2c7cb;
+    border-top: solid #c8c9cb 2px;
+    border-left: solid #c8c9cb 2px;
+    border-bottom: solid #000002 2px;
+    border-right: solid #000002 2px;
+    box-shadow:
+        inset 2px 2px 0 0 #fcffff,
+        inset -2px -2px 0 0 #868a8e;
+}
+.win95 .arrow:after {
+    content: '▾';
+}
+
+/* --- */
+
+.xp {
+    background: #fff;
+    border: solid #859bb5 1px;
+    padding: 1px;
+}
+.xp .selection {
+    color: #4c5e88;
+    font-family: sans-serif;
+    text-decoration: none;
+    padding: 0 20px 0 8px;
+}
+.xp .arrow {
+    background-image: linear-gradient(135deg, #d5e2fd, #b3c9f9);
+    border-radius: 2px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .1);
+}
+.xp .arrow:after {
+    content: '';
+    display: block;
+    width: 19px;
+    height: 27px;
+    margin: 0 0 0 2px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E %3Cpath fill='none' stroke='%234c5e88' stroke-linecap='square' stroke-width='10' d='M10 10l20 20 20-20'/%3E %3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px auto;
+}
+
+/* --- */
+
+.aero {
+    background-color: #eee;
+    background-image: linear-gradient(to bottom, #f1f1f1 0, #ececec 50%, #dedede 51%, #cfcfcf 100%);
+    border: solid #707070 1px;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 1px #fff;
+    padding: 4px 6px;
+    color: #090000;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, .5);
+}
+.aero .selection {
+    font-family: sans-serif;
+    text-decoration: none;
+    padding: 0 10px 0 0;
+}
+
+/* --- */
+
+.metro {
+    border: solid #797979 2px;
+    padding: 8px 8px 8px 10px;
+}
+.metro .selection {
+    font-family: sans-serif;
+    text-decoration: none;
+    padding: 0 16px 0 0;
+    color: #555;
+}
+.metro .arrow:after {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: 0 0 0 2px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E %3Cpath fill='none' stroke='%23797979' stroke-linecap='square' stroke-width='10' d='M10 10l20 20 20-20'/%3E %3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px auto;
+}
+
+/* --- */
+
+.aqua {
+    background: #fff;
+    border: solid #6a96d5 2px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px -2px #6a96d5;
+}
+.aqua .selection {
+    font-family: sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: #5d5f6b;
+    padding: 4px 10px;
+}
+.aqua .arrow {
+    background-image: linear-gradient(180deg, #c0d7f1 0, #96beee 50%, #c2ecfd 100%);
+    border-left: solid #7fa9df 1px;
+    padding: 4px 8px;
+}
+.aqua .arrow:after {
+    color: #626262;
+    content: '▾';
+}
+
 </style>
 </head>
 <body>
@@ -143,103 +236,272 @@ pre, code {}
 
 <header>
     <h1>auto-resize-custom-select</h1>
-    <h2>customSelect Examples</h2>
+    <h2>customSelect examples:</h2>
+</header>
+
+<main>
+
+    <section>
+        <div>
+            <select class="default">
+                <option value="0">Default Style</option>
+                <option value="1">one</option>
+                <option value="2">two</option>
+                <option value="3">three</option>
+            </select>
+        </div>
+        <pre><code class="language-css">/* No CSS (Default) */</code></pre>
+    </section>
+
+    <section>
+        <div>
+            <select class="beau-selecteur">
+                <option value="0">Beau Sélecteur</option>
+                <option value="1">un</option>
+                <option value="2">deux</option>
+                <option value="3">trois</option>
+            </select>
+        </div>
+        <pre><code class="language-css">.beau-selecteur {
+    border: solid #333 1px;
+    border-radius: 3px;
+    padding: .5rem 1rem;
+}</code></pre>
+    </section>
+
+    <section>
+        <div>
+            <select class="win95">
+                <option value="win95">Windows 95</option>
+                <option value="ie">Internet Explorer</option>
+                <option value="oe">Outlook Express</option>
+                <option value="me">Microsoft Exchange</option>
+                <option value="dos">MS-DOS</option>
+                <option value="msn">MSN Messenger</option>
+            </select>
+        </div>
+        <pre><code class="language-css">.win95 {
+    border-top: solid #868b8f 2px;
+    border-left: solid #868b8f 2px;
+    border-bottom: solid #daddde 2px;
+    border-right: solid #daddde 2px;
+    box-shadow:
+        inset 2px 2px 0 0 #000002,
+        inset -2px -2px 0 0 #c3c4c6;
+    padding: 2px;
+}
+.win95 .selection {
+    padding: 2px 8px;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+.win95 .arrow {
+    padding: 2px 8px;
+    background: #c2c7cb;
+    border-top: solid #c8c9cb 2px;
+    border-left: solid #c8c9cb 2px;
+    border-bottom: solid #000002 2px;
+    border-right: solid #000002 2px;
+    box-shadow:
+        inset 2px 2px 0 0 #fcffff,
+        inset -2px -2px 0 0 #868a8e;
+}
+.win95 .arrow:after {
+    content: '▾';
+}</code></pre>
+    </section>
+
+    <section>
+        <div>
+            <select class="aqua">
+                <option value="aqua">Aqua</option>
+                <option value="ie">Preferences.app</option>
+                <option value="oe">Mail.app</option>
+                <option value="me">Preview.app</option>
+                <option value="dos">TextEdit.app</option>
+            </select>
+        </div>
+        <pre><code class="language-css">.aqua {
+    background: #fff;
+    border: solid #6a96d5 2px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px -2px #6a96d5;
+}
+.aqua .selection {
+    font-family: sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: #5d5f6b;
+    padding: 4px 10px;
+}
+.aqua .arrow {
+    background-image: linear-gradient(180deg, #c0d7f1 0, #96beee 50%, #c2ecfd 100%);
+    border-left: solid #7fa9df 1px;
+    padding: 4px 8px;
+}
+.aqua .arrow:after {
+    color: #626262;
+    content: '▾';
+}</code></pre>
+    </section>
+
+    <section>
+        <div>
+            <select class="xp">
+                <option value="winXP">Windows XP</option>
+                <option value="ie">Internet Explorer</option>
+                <option value="oe">Outlook Express</option>
+                <option value="me">Microsoft Exchange</option>
+                <option value="dos">MS-DOS</option>
+                <option value="msn">MSN Messenger</option>
+            </select>
+        </div>
+        <pre><code class="language-css">.xp {
+    background: #fff;
+    border: solid #859bb5 1px;
+    padding: 1px;
+}
+.xp .selection {
+    color: #4c5e88;
+    font-family: sans-serif;
+    text-decoration: none;
+    padding: 0 20px 0 8px;
+}
+.xp .arrow {
+    background-image: linear-gradient(135deg, #d5e2fd, #b3c9f9);
+    border-radius: 2px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .1);
+}
+.xp .arrow:after {
+    content: '';
+    display: block;
+    width: 19px;
+    height: 27px;
+    margin: 0 0 0 2px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E %3Cpath fill='none' stroke='%234c5e88' stroke-linecap='square' stroke-width='10' d='M10 10l20 20 20-20'/%3E %3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px auto;
+}</code></pre>
+    </section>
+
+    <section>
+        <div>
+            <select class="aero">
+                <option value="ie">Windows Aero</option>
+                <option value="ie">Internet Explorer</option>
+                <option value="oe">Outlook Express</option>
+                <option value="me">Microsoft Exchange</option>
+                <option value="dos">MS-DOS</option>
+                <option value="msn">MSN Messenger</option>
+            </select>
+        </div>
+        <pre><code class="language-css">.aero {
+    background-color: #eee;
+    background-image: linear-gradient(to bottom, #f1f1f1 0, #ececec 50%, #dedede 51%, #cfcfcf 100%);
+    border: solid #707070 1px;
+    border-radius: 4px;
+    box-shadow: inset 0 0 0 1px #fff;
+    padding: 4px 6px;
+    color: #090000;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, .5);
+}
+.aero .selection {
+    font-family: sans-serif;
+    text-decoration: none;
+    padding: 0 10px 0 0;
+}</code></pre></div>
+    </section>
+
+    <section>
+        <div>
+            <select class="metro">
+                <option value="metro">Microsoft Metro</option>
+                <option value="ie">Internet Explorer</option>
+                <option value="oe">Outlook Express</option>
+                <option value="me">Microsoft Exchange</option>
+                <option value="dos">MS-DOS</option>
+                <option value="msn">MSN Messenger</option>
+            </select>
+        </div>
+        <pre><code class="language-css">.metro {
+    border: solid #797979 2px;
+    padding: 8px 8px 8px 10px;
+}
+.metro .selection {
+    font-family: sans-serif;
+    text-decoration: none;
+    padding: 0 16px 0 0;
+    color: #555;
+}
+.metro .arrow:after {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin: 0 0 0 2px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E %3Cpath fill='none' stroke='%23797979' stroke-linecap='square' stroke-width='10' d='M10 10l20 20 20-20'/%3E %3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px auto;
+}</code></pre>
+    </section>
+
+    <section>
+        <div>
+            <select>
+                <option value="0">Script no applying</option>
+                <option value="1">one</option>
+                <option value="2">two</option>
+                <option value="3">three</option>
+            </select>
+        </div>
+        <pre><code class="language-css">/* a select without the script */</code></pre>
+    </section>
+</main>
+
+<footer>
     <ul>
-        <li>More Info
+        <li><strong>More Info</strong>
             <ul>
                 <li>NPM : <a href="https://www.npmjs.com/package/auto-resize-custom-select">https://www.npmjs.com/package/auto-resize-custom-select</a></li>
                 <li>Docs : <a href="https://alterebro.github.io/auto-resize-custom-select/">https://alterebro.github.io/auto-resize-custom-select/</a></li>
                 <li>GitHub : <a href="https://github.com/alterebro/auto-resize-custom-select">https://github.com/alterebro/auto-resize-custom-select</a></li>
             </ul>
         </li>
-        <li>CDN's
+        <li><strong>CDN's</strong>
             <ul>
                 <li>unpkg : <a href="https://unpkg.com/auto-resize-custom-select">https://unpkg.com/auto-resize-custom-select</a></li>
                 <li>jsdelivr : <a href="https://cdn.jsdelivr.net/gh/alterebro/auto-resize-custom-select/dist/customSelect.min.js">https://cdn.jsdelivr.net/gh/alterebro/auto-resize-custom-select/dist/customSelect.min.js</a></li>
             </ul>
         </li>
     </ul>
-</header>
-
-<main>
-<section>
-    <div class="html">
-<pre><code class="language-html">&lt;select&gt;
-    &lt;option value="1"&gt;one&lt;/option&gt;
-    &lt;option value="2"&gt;two&lt;/option&gt;
-    &lt;option value="3"&gt;three&lt;/option&gt;
-&lt;/select&gt;</code></pre>
-    </div>
-
-    <div class="js">
-<pre><code class="language-javascript">customSelect();</code></pre>
-    </div>
-
-    <div class="css">
-<pre><code class="language-css">/* No Options &amp; No Styling
-Default Layout */</code></pre>
-    </div>
-
-    <div class="result">
-        <select class="default">
-            <option value="1">one</option>
-            <option value="2">two</option>
-            <option value="3">three</option>
-        </select>
-    </div>
-</section>
-
-<section>
-    <div class="html">
-<pre><code class="language-html">&lt;select class="fr"&gt;
-    &lt;option value="1"&gt;un&lt;/option&gt;
-    &lt;option value="2"&gt;deux&lt;/option&gt;
-    &lt;option value="3"&gt;trois&lt;/option&gt;
-&lt;/select&gt;</code></pre>
-    </div>
-
-    <div class="js">
-<pre><code class="language-javascript">customSelect({
-    el: '.fr',
-    className: 'beau-selecteur'
-});</code></pre>
-    </div>
-
-    <div class="css">
-<pre><code class="language-css">.beau-selecteur {
-    border: solid #333 1px;
-    border-radius: 3px;
-    padding: .5rem 1rem;
-}</code></pre>
-    </div>
-
-    <div class="result">
-        <select class="fr">
-            <option value="1">un</option>
-            <option value="2">deux</option>
-            <option value="3">trois</option>
-        </select>
-    </div>
-</section>
-</main>
-
-<footer>
     <p>
-        Jorge Moreno &copy; 2021. <a href="https://twitter.com/alterebro">@<strong>alterebro</strong></a>
+        <strong>Jorge Moreno</strong> &copy; 2021. <a href="https://twitter.com/alterebro">@<strong>alterebro</strong></a>
     </p>
 </footer>
 
 
 <script src="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/highlight.min.js"></script>
-<script src="https://unpkg.com/auto-resize-custom-select" charset="utf-8"></script>
+<!-- <script src="https://unpkg.com/auto-resize-custom-select" charset="utf-8"></script> -->
+<!-- <script src="customSelect.min.js" charset="utf-8"></script> -->
+<script src="../src/customSelect.js" charset="utf-8"></script>
+
 <script charset="utf-8">
 hljs.initHighlightingOnLoad();
 
-customSelect('.default');
-customSelect({
-    el: '.fr',
-    className: 'beau-selecteur'
-});
+customSelect('select.default');
+customSelect('select.beau-selecteur');
+
+customSelect('select.win95');
+customSelect('select.xp');
+customSelect('select.aero');
+customSelect('select.metro');
+customSelect('select.aqua');
+
+
+
 </script>
 </body>
 </html>
