@@ -44,13 +44,18 @@ const customSelect = function(_config) {
     Array.from(elements).forEach((el, i) => {
 
         let selector = el;
+
         let container = document.createElement('span');
+            container.classList.add(...el.classList);
             container.classList.add(settings.className);
+
         let selection = document.createElement('span');
             selection.classList.add('selection');
+
         let arrow = document.createElement('span');
             arrow.classList.add('arrow');
 
+            selector.classList.remove(...selector.classList);
             selector.parentNode.insertBefore(container, selector);
 
         container.appendChild(selection);
