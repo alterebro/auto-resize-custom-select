@@ -1,6 +1,6 @@
 {
   "name": "auto-resize-custom-select",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Auto resize drop-down select elements to match the width of the selected option and customize it with CSS",
   "main": "src/customSelect.js",
   "module": "dist/customSelect.js",
