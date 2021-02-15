@@ -31,6 +31,18 @@ Easiest way to install it is via **NPM** or including the minified file from the
 <script src="https://cdn.jsdelivr.net/gh/alterebro/auto-resize-custom-select/dist/customSelect.min.js"></script>
 ```
 
+## Examples
+
+Some examples can be seen on this CodePen: https://codepen.io/alterebro/full/RwopMYp
+
+<p class="codepen" data-height="500" data-theme-id="light" data-default-tab="result" data-user="alterebro" data-slug-hash="RwopMYp" style="height: 500px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Auto Resize Custom Select">
+  <span>See the Pen <a href="https://codepen.io/alterebro/pen/RwopMYp">
+  Auto Resize Custom Select</a> by Jorge Moreno (<a href="https://codepen.io/alterebro">@alterebro</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+
 ## Usage
 
 Just include it on your document and call the `customSelect` function. The script is available as ES5 minified file and as ES Module.
