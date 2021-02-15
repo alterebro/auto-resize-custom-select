@@ -35,10 +35,7 @@ Easiest way to install it is via **NPM** or including the minified file from the
 
 Some examples can be seen on this CodePen: https://codepen.io/alterebro/full/RwopMYp
 
-<iframe height="500" style="width: 100%;" scrolling="no" title="Auto Resize Custom Select" src="https://codepen.io/alterebro/embed/RwopMYp?height=499&theme-id=light&default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href='https://codepen.io/alterebro/pen/RwopMYp'>Auto Resize Custom Select</a> by Jorge Moreno
-  (<a href='https://codepen.io/alterebro'>@alterebro</a>) on <a href='https://codepen.io'>CodePen</a>.
-</iframe>
+[![Custom Select Examples](https://alterebro.github.io/auto-resize-custom-select/custom-select-examples.png "Custom Select Examples")](https://codepen.io/alterebro/pen/RwopMYp)
 
 
 ## Usage
